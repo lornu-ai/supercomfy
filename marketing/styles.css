@@ -195,6 +195,52 @@ h1 {
   color: var(--muted);
 }
 
+.instagram-qr {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  text-align: center;
+}
+
+.instagram-qr h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.instagram-qr > p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 1.25rem;
+}
+
+.instagram-qr-link {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 8%);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.instagram-qr-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgb(0 0 0 / 12%);
+}
+
+.instagram-qr-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.instagram-handle {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
 .notify {
   max-width: 520px;
   margin: 0 auto;
