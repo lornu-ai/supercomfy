@@ -27,7 +27,12 @@ Sends via **Resend** from **`notify@inertsynergies.com`** (domain DKIM is on Clo
 | `WAITLIST_NOTIFY_TO` | env | `principle@lornu.ai` |
 | `WAITLIST_NOTIFY_FROM` | env | `#supercomfy <notify@inertsynergies.com>` |
 
+Keychain stores the token **hex-encoded** (with smart quotes). Decode before upload:
+
 ```bash
-bunx wrangler pages secret put RESEND_API_KEY --project-name=supercomfy
+export RESEND_API_KEY=$(python3 -c 'import subprocess,binascii; raw=subprocess.check_output(["security","find-generic-password","-s","RESEND_API_KEY","-w"],text=True).strip(); print(binascii.unhexlify(raw).decode("utf-8").strip("\u201c\u201d\""), end="")')
+printf '%s' "$RESEND_API_KEY" | bunx wrangler pages secret put RESEND_API_KEY --project-name=supercomfy
 cd marketing && bunx wrangler pages deploy . --project-name=supercomfy --branch=main
 ```
+
+Or: `marketing/scripts/resend-key-from-keychain.sh | bunx wrangler pages secret put RESEND_API_KEY --project-name=supercomfy`
