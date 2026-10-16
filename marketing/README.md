@@ -17,4 +17,17 @@ bunx wrangler pages deploy marketing --project-name=supercomfy --branch=main
 - https://supercomfy.pages.dev
 - https://supercomfy.in3rt.net
 
-Replace the waitlist `mailto:` in `index.html` with Formspree/Tally when ready.
+## Waitlist email (Resend)
+
+Sends via **Resend** from **`notify@inertsynergies.com`** (domain DKIM is on Cloudflare).
+
+| Variable | Type | Default |
+|----------|------|---------|
+| `RESEND_API_KEY` | Pages **secret** | *(required)* — copy from `inertsynergies-com` project or Resend dashboard |
+| `WAITLIST_NOTIFY_TO` | env | `principle@lornu.ai` |
+| `WAITLIST_NOTIFY_FROM` | env | `#supercomfy <notify@inertsynergies.com>` |
+
+```bash
+bunx wrangler pages secret put RESEND_API_KEY --project-name=supercomfy
+cd marketing && bunx wrangler pages deploy . --project-name=supercomfy --branch=main
+```
