@@ -13,11 +13,11 @@ Consumer lifestyle brand and digital product layer for **Cloud-Shield** apparel 
 | Web | Next.js on Workers ([vinext](https://github.com/cloudflare/vinext)) |
 | Tooling | Bun, Vitest, Playwright, GitHub Actions, Wrangler |
 
-## Domains (target)
+## Domains
 
-- **Brand:** `supercomfy.io` (canonical)
+- **Marketing (live):** https://supercomfy.pages.dev · https://supercomfy.in3rt.net
+- **Brand (target):** `supercomfy.io` (canonical when registered)
 - **Handle redirect:** `staysupercomfy.com` → apex
-- **Staging:** `supercomfy.in3rt.net` (optional)
 
 ## Monorepo
 
