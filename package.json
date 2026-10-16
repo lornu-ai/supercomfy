@@ -1,0 +1,21 @@
+{
+  "name": "supercomfy",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "echo \"Add vinext/worker builds per app when scaffolded\""
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}
