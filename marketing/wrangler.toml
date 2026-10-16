@@ -1,0 +1,6 @@
+name = "supercomfy"
+pages_build_output_dir = "."
+
+[[kv_namespaces]]
+binding = "WAITLIST"
+id = "66fc13bae99043f8bfdaa0edf1e7b90c"

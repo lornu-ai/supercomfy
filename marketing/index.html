@@ -88,20 +88,25 @@
       <section class="notify" id="notify">
         <h2>Be first in line</h2>
         <p>Drop alerts, sizing guide, and early access — no spam.</p>
-        <form
-          class="notify-form"
-          action="mailto:principle@lornu.ai?subject=%23supercomfy%20waitlist"
-          method="GET"
-          enctype="text/plain"
-        >
+        <p class="notify-success" id="notify-success" hidden>
+          You’re on the list — we’ll email you before the drop.
+        </p>
+        <form class="notify-form" action="/api/waitlist" method="POST">
           <label class="sr-only" for="email">Email</label>
           <input
             id="email"
-            name="body"
+            name="email"
             type="email"
             required
             placeholder="you@example.com"
             autocomplete="email"
+          />
+          <input
+            class="sr-only"
+            tabindex="-1"
+            autocomplete="off"
+            name="_gotcha"
+            type="text"
           />
           <button type="submit" class="btn btn-primary">Notify me</button>
         </form>
@@ -115,5 +120,14 @@
     <footer class="site-footer">
       <p>© 2026 #supercomfy · Inert Synergies</p>
     </footer>
+    <script>
+      if (new URLSearchParams(location.search).get("joined") === "1") {
+        const ok = document.getElementById("notify-success");
+        const form = document.querySelector(".notify-form");
+        if (ok) ok.hidden = false;
+        if (form) form.hidden = true;
+        history.replaceState(null, "", location.pathname + "#notify");
+      }
+    </script>
   </body>
 </html>
