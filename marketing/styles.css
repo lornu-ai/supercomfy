@@ -45,10 +45,18 @@ a {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--ink);
+}
+
+.logo-mark {
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .header-cta {
@@ -193,6 +201,58 @@ h1 {
   margin: 0;
   font-size: 0.92rem;
   color: var(--muted);
+}
+
+.blueprint-gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+}
+
+.blueprint-gallery h2 {
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.blueprint-lede {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 auto 1.5rem;
+  max-width: 40ch;
+  font-size: 0.95rem;
+}
+
+.blueprint-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .blueprint-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.blueprint-grid figure {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.blueprint-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.blueprint-grid figcaption {
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
 }
 
 .instagram-qr {
